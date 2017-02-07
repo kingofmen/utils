@@ -3,21 +3,20 @@
 namespace utils {
 namespace dice {
 
-enum RollType {Equal = 0, GtEqual, LtEqual, Greater, Less};
+enum RollType { Equal = 0, GtEqual, LtEqual, Greater, Less };
 
 struct DieRoll {
-  DieRoll (int d, int f);   
-  double probability (int target, int mods, RollType t) const; 
-  int roll () const;
-  
+  DieRoll(int d, int f);
+  double probability(int target, int mods, RollType t) const;
+  int roll() const;
+
 private:
-  double baseProb (int target, int mods, RollType t) const; 
+  double baseProb(int target, int mods, RollType t) const;
 
   int dice;
   int faces;
-  DieRoll* next; 
+  DieRoll *next;
 };
 
-}  // namespace dice
-}  // namespace utils
-
+} // namespace dice
+} // namespace utils
